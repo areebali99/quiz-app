@@ -1,24 +1,26 @@
 import logo from './logo.svg';
+
+import {QuizContextProvider} from "./Context/QuizContext";
+import TopProgressBar from "./Components/TopProgressBar";
+import QuestionInfo from "./Components/QuestionInfo";
+import QuestionAndBtn from "./Components/QuestionAndBtns";
+import ResultCard from "./Components/ResultCard";
 import './App.css';
 
 function App() {
   return (
+    <QuizContextProvider>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <TopProgressBar />
+    <div id="container">
+      <QuestionInfo />
+      <QuestionAndBtn />
+      
     </div>
+
+    </div>
+    
+    </QuizContextProvider>
   );
 }
 
